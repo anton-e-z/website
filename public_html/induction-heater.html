@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Anton Zaytsev</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        
+        <!-- BEGIN HEADER -->
+        <div id="header">
+            <a href="index.html" style="text-decoration: none;"><div id="name">Anton Zaytsev</div></a>
+            <div id="header-buttons-container">
+                <a href ="index.html" class="header-button">Works</a>
+                <a href ="about.html" class="header-button">About</a>
+                <a href ="AntonZaytsevResume.pdf" class="header-button">Resume</a>
+            </div>
+        </div>
+        <!-- END HEADER -->
+
+        <!-- BEGIN BODY -->
+        
+        <div id="body">
+            <div class="work-page">
+                <h1>INDUCTION HEATING</h1>
+                <img src="induction-heater/thumbnail.jpg" class="head-img"/>
+                <p> 
+                    Building an induction heater was my first real introduction to electrical and hardware engineering. This project was a two-year quest that began with learning about rectifiers and advanced to designing and testing a 1.5 kW H-bridge circuit. Induction heating is a highly advanced application of power electronics involving high voltages, high currents, and high frequencies that was far too difficult for a beginning hardware engineer to grapple. Nevertheless, employing the most careful safety measures, I worked through two years of trial and error to become the experienced hardware engineer I am today.
+                </p>
+                <p>
+                    Early prototypes consisted of MOSFETs and capacitors soldered point-to-point in an attempt at building a half-bridge. Countless blown transistors and destroyed microcontrollers later, after researching circuit design and interviewing electrical engineer friends, the latest prototype is a professional-grade PCB with a functional high-power H-bridge and built-in analytical tools operated by an ARM-based microcontroller. This project has taken my skills very far, but has unfortunately been shelved due to budget problems and the fact that my task of heating metal for blacksmithing was solved with a homemade propane forge. 
+                </p>
+                <p>    
+                What follows is a brief gallery of what images I could find of testing and prototyping over the past few years.
+                </p>
+                <div class="work-page-img" style="width: 889px;">
+                    <img src="induction-heater/first-prototype.jpg" />
+                    <p><em>First assembled prototype of the induction heater primary side. This circuit was constructed on a perforated prototyping board and suffered from excessive stray inductance that ultimately destroyed the transistors.</em></p>
+                </div>
+                <div class="work-page-img" style="width: 889px;">
+                    <img src="induction-heater/flux-experiments.jpg" />
+                    <p><em>During the process of building a switching transformer, I needed to learn about flux profiles in a transformer core. As no good references could be found to address my questions, I experimented with transformer core flux profiles myself.</em></p>
+                </div>
+                <div class="work-page-img" style="width: 889px;">
+                    <img src="induction-heater/flux-trace.jpg" />
+                    <p><em>A trace from a flux profile experiment.</em></p>
+                </div>
+                <div class="work-page-img" style="width: 889px;">
+                    <img src="induction-heater/cores.jpg" />
+                    <p><em>A comparison of the core sizes I used for the induction heater.</em></p>
+                </div>
+                <div class="work-page-img" style="width: 889px;">
+                    <img src="induction-heater/microcontroller.jpg" />
+                    <p><em>Testing the microcontroller and analytics circuitry for the PCB prototype. As this the first draft of this design, some greenwiring needed to be done to make things work.</em></p>
+                </div>
+                <div class="work-page-img" style="width: 889px;">
+                    <img src="induction-heater/final-prototype.jpg" />
+                    <p><em>Testing transient response of the H-bridge at various load levels.</em></p>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+        
+        <!-- END BODY -->
+    </body>
+</html>

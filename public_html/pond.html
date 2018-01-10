@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Anton Zaytsev</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        
+        <!-- BEGIN HEADER -->
+        <div id="header">
+            <a href="index.html" style="text-decoration: none;"><div id="name">Anton Zaytsev</div></a>
+            <div id="header-buttons-container">
+                <a href ="index.html" class="header-button">Works</a>
+                <a href ="about.html" class="header-button">About</a>
+                <a href ="AntonZaytsevResume.pdf" class="header-button">Resume</a>
+            </div>
+        </div>
+        <!-- END HEADER -->
+
+        <!-- BEGIN BODY -->
+        
+        <div id="body">
+            <div class="work-page">
+                <h1>POND</h1>
+                <img src="pond/thumbnail.jpg" class="head-img"/>
+                <p> 
+                    Pond is an interactive installation art project displayed every year at Reed College's Renn Fayre festival. The piece consists of a field of swaying jars that interactively change color as they move. I partnered with Guananí Gómez van Cortright to push Pond from inspiration to proposal, design, assembly, and implementation.
+                </p>
+                <p> 
+                    This project was inspired by a field of tall swaying color reeds Guananí saw at a burning festival, and immediately after recounting said project to me we began considering how to implement a similar idea as an installation art project at Reed. The final seed of a design manifested as a field of cattail-like structures consisting of a flexible acrylic rod with a semi-opaque jar mounted at the end. Inside the jar would sit a circuit consisting of an RGB LED, a microcontroller, and an accelerometer to provide interactive color change with motion.
+                </p>
+                <div class="work-page-img" style="width: 712px">
+                    <img src="pond/structure-test.jpg" style="float: left; max-width:50%" />
+                    <img src="pond/led-test.jpg" style="float: right; max-width:50%; margin-left:20px" />
+                    <p style="clear: both"><em>Initial tests of structure and LED brightness permitted proceeding with a project proposal.</em></p>
+                </div>
+                <p> 
+                    Pond was an installation for Reed's Renn Fayre festival, so after initial tests with structure and brightness we proceeded with a budget proposal to the Renn Fayre committee. We drew up designs for the circuit running the interactive lighting. Unfortunately, administrative delays meant that the final designs for PCBs were not sent out until the week before the festival. This project would have to be completed under a tight deadline.
+                </p>
+                <div class="work-page-img" style="width: 1020px">
+                    <img src="pond/pcb-front.jpg" style="float: left; max-width:50%" />
+                    <img src="pond/pcb-back.jpg" style="float: right; max-width:50%; margin-left:20px" />
+                    <p style="clear: both"><em>Front and back of custom Pond PCB.</em></p>
+                </div>
+                <p> 
+                    By the time the PCBs shipped, four days remained until the festival. In order to complete the SMD soldering of 100 circuits on time without access to a reflow oven, I had to develop my own technique for reflowing circuits in a DIY setting. This procedure consisted of cutting reflow stencils from overhead transparencies using Reed's laser cutter, applying reflow onto the boards, and reflowing on a heated aluminum block regulated with a thermocouple.
+                </p>
+                <div class="work-page-img" style="width: 888px">
+                    <img src="pond/laser-stencil.jpg" />
+                    <p><em>Laser cutting reflow stencils from overhead transparency.</em></p>
+                </div>
+                <div class="work-page-img" style="width: 590px">
+                    <img src="pond/heated-block.jpg" />
+                    <p><em>Reflow was performed on a heated block; temperature was measured with a thermocouple.</em></p>
+                </div>
+                <div class="work-page-img" style="width: 910px">
+                    <img src="pond/priming.jpg" />
+                    <p><em>The accelerometer ICs, with 0.25 mm pitch, needed solder "priming" to ensure successful reflow.</em></p>
+                </div>
+                <div class="work-page-img" style="width: 619px">
+                    <img src="pond/hand-solder.jpg" />
+                    <p><em>Finally, through-hole jumpers were soldered on by hand.</em></p>
+                </div>
+                <p> 
+                    Finally, the microcontroller software was flashed onto the lights and the final installation completed just in time for the student body to enjoy.
+                </p>
+                <div class="work-page-img" style="width: 889px">
+                    <img src="pond/final.jpg" />
+                    <p><em>Completed Pond shines colorfully at night and sways between orange and purple when moved.</em></p>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <!-- END BODY -->
+    </body>
+</html>

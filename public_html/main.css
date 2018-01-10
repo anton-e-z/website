@@ -1,0 +1,239 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 30, 2017, 11:23:21 PM
+    Author     : Anton
+*/
+
+
+body
+{
+    background-color: #2b2b2b;
+}
+
+#body
+{
+    max-width: 1600px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+#header
+{
+    height: 91px;
+    max-width: 1250px;
+    min-width: 870px;
+    margin: auto;
+    
+    
+    border-bottom: 0.5px solid #ffffff;
+    display:block;
+}
+
+#name
+{
+    color: #f98f00;
+    font-family: Verdana;
+    font-size: 80px;
+    float: left;
+    margin: 0px 20px 5px 15px
+    
+}
+
+#header-buttons-container
+{
+    float: right;
+    margin: 64px 1px 18px 0px;
+}
+
+.header-button
+{
+    text-decoration: none;
+    color: #ffffff;
+    font-family: Helvetica;
+    margin-right: 26px;
+    font-size: 18px;
+}
+
+.header-button:hover
+{
+    color: #f98f00;
+}
+
+.work
+{
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 10px;
+}
+
+.work-label-mousecatch
+{
+    width: 400px;
+    height: 800px;
+    margin-top: 0px;
+    padding-top: 362px;
+    transition: padding-top 0.25s; 
+}
+
+.work-label-mousecatch:hover
+{
+    padding-top: 0px;
+}
+
+.work-label-container
+{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(0,0,0,0.55);
+    
+    /*margin-top: 362px;*/
+    
+}
+
+.work-label-header
+{
+    color: #ffffff;
+    font-family: Helvetica;
+    font-size: 25px;
+    margin-top: 0;
+    padding-top: 6px;
+}
+
+.work-label-body
+{
+    text-align: justify;
+    color: #ffffff;
+    font-family: Helvetica;
+    font-size: 21px;
+    padding: 10px 10px 19px 10px;
+}
+
+#thesis
+{
+    background-image: url(thesis/thumbnail.jpg);
+    background-size: cover;
+}
+
+#sunrise-sim
+{
+    background-image: url(sunrise-simulator/thumbnail.jpg);
+    background-size: cover;
+}
+
+#pond
+{
+    background-image: url(pond/thumbnail.jpg);
+    background-size: cover;
+}
+
+#mobile-phones
+{
+    background-image: url(mobile-phones/thumbnail.jpg);
+    background-size: cover;
+}
+
+#tetris
+{
+    background-image: url(tetris/thumbnail.jpg);
+    background-size: cover;
+}
+
+#induction-heater
+{
+    background-image: url(induction-heater/thumbnail.jpg);
+    background-size: cover;
+}
+
+#diy-pcb
+{
+    background-image: url(diy-pcb/thumbnail.jpg);
+    background-size: cover;
+}
+
+#laser-cut
+{
+    background-image: url(laser-cut/thumbnail.jpg);
+    background-size: cover;
+}
+
+#robotics
+{
+    background-image: url(robotics/thumbnail.png);
+    background-size: cover; 
+}
+
+.work-page
+{
+    max-width: 1240px;
+    text-align: center;
+    color: #ffffff;
+    font-family: Helvetica;
+    font-size: 18px;
+    margin: auto;
+}
+
+.work-page h1
+{
+    font-size: 48px;
+    margin-bottom: 36px;
+    margin-top: 40px;
+}
+
+.work-page h2
+{
+    
+}
+
+.work-page p
+{
+    text-align: justify;
+}
+
+.work-page a
+{
+    color: #ffffff;
+}
+.work-page a:hover
+{
+    color: #f98f00;
+}
+
+.work-page li
+{
+    text-align: left;
+}
+
+.head-img
+{
+    width: 400px;
+    margin-bottom: 40px;
+}
+
+.work-page-img
+{ 
+    max-width: 100%;
+    margin: auto;
+    margin-top: 16px;
+    
+}
+
+.work-page-img img
+{
+    max-width: 100%;
+    max-height: 500px;    
+}
+
+.work-page-img p
+{
+    font-size: 16px;
+    text-align: right;
+    margin: 3px 0px 12px 0px;
+}

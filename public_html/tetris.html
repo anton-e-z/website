@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Anton Zaytsev</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        
+        <!-- BEGIN HEADER -->
+        <div id="header">
+            <a href="index.html" style="text-decoration: none;"><div id="name">Anton Zaytsev</div></a>
+            <div id="header-buttons-container">
+                <a href ="index.html" class="header-button">Works</a>
+                <a href ="about.html" class="header-button">About</a>
+                <a href ="AntonZaytsevResume.pdf" class="header-button">Resume</a>
+            </div>
+        </div>
+        <!-- END HEADER -->
+
+        <!-- BEGIN BODY -->
+        
+        <div id="body">
+            <div class="work-page">
+                <h1>TETRIS ART HACK</h1>
+                <img src="tetris/thumbnail.jpg" class="head-img"/>
+                <p> 
+                    During the Palo Alto Code:Art 2017 festival, I (consentually) hacked an installation by Mateo Garcia to play Tetris on his 30-foot tall hanging LED display. This hack was completed in one day with the collaboration of Danny Andreev.
+                </p>
+                <div class="work-page-img" style="width: 452px;">
+                    <img src="tetris/hardware.jpg" />
+                    <p><em>The hardware running the LED strips in this art piece.</em></p>
+                </div>
+                <p> 
+                    After coming across and realizing the potential of this hanging LED display art project for an art piece, the hack began with information gathering. We found that the entire piece was run with FadeCandy dithering controllers that could be interfaced with via USB and an generative art library called Processing. We spent the next day writing an edition of Tetris in Processing and developing an interface through a wireless access point created on our computer.
+                </p>
+                <p> 
+                    Finally, when the project was displayed to the public the next evening, Danny and I asked the artist Mateo Garcia to connect to our access point to play Tetris on his art piece. He accepted the offer and crowds were amused as a three-story Tetris game materialized on the side of a parking garage.
+                </p>
+                <video width="1240" height="698" controls><source src="tetris/video.mp4" type="video/mp4"></video>
+                <p> 
+                    The wireless access point was established using hostapd on Kali Linux. The source for the Tetris implementation can be found <a href="tetris/tetris.pde">here</a> and the modified FadeCandy Processing library for this project can be found <a href="tetris/OPC.pde">here</a>.
+                </p>
+            </div>
+        </div>
+        
+        
+        
+        <!-- END BODY -->
+    </body>
+</html>

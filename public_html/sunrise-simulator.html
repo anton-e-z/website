@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Anton Zaytsev</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        
+        <!-- BEGIN HEADER -->
+        <div id="header">
+            <a href="index.html" style="text-decoration: none;"><div id="name">Anton Zaytsev</div></a>
+            <div id="header-buttons-container">
+                <a href ="index.html" class="header-button">Works</a>
+                <a href ="about.html" class="header-button">About</a>
+                <a href ="AntonZaytsevResume.pdf" class="header-button">Resume</a>
+            </div>
+        </div>
+        <!-- END HEADER -->
+
+        <!-- BEGIN BODY -->
+        
+        <div id="body">
+            <div class="work-page">
+                <h1>SUNRISE SIMULATOR</h1>
+                <img src="sunrise-simulator/thumbnail.jpg" class="head-img"/>
+                <p> 
+                    Dawn, my DIY sunrise simulator, is a hacked consumer RGB LED strip operated by a Raspberry Pi server in my bedroom. Dawn simulates a sunrise during the hour leading up to waking time in order to awaken refreshed even on dark winter mornings. This project arose as much out of a need for its utility as out of the thrill of hacking consumer electronics. Instead of using a standardized, documented LED strip and driver, I chose to take on the challenge of hacking a <a href="https://www.amazon.com/gp/product/B00X7JUN0I">nonstandard, undocumented LED strip</a> purchased from Amazon.
+                </p>
+                <div class="work-page-img" style="width: 638px" >
+                    <img src="sunrise-simulator/front-untouched.jpg" style="float: left; max-width:50%" />
+                    <img src="sunrise-simulator/back-untouched.jpg" style="float: right; max-width:50%; margin-left:20px" />
+                    <p style="clear: both"><em>Unaltered front and back of control circuit.</em></p>
+                </div>
+                <p> 
+                    The first task of this hardware hack was to analyze the components and connectivities on the main control board. A brief investigation revealed that the red, green, and blue components of the strip were in a low-side switching configuration, and the control circuitry worked on 5V logic. The MOSFETs controlling the LEDs were operated by some unlabeled, presumably proprietary driver chip which interfaced with an EEPROM memory IC over I2C and directly connected over some unknown 1-wire protocol to an IR receiver.
+                </p>
+                <p> 
+                    I2C seemed at first to be the simplest interface to try and manipulate the LED driver with. Protocol analysis of the I2C busses revealed that when any button was pressed on the remote, a series three 8-byte write commands were issued to the EEPROM, but no reading occurred. The only time I observed a read command issued was during a full power cycle, so clearly the EEPROM was only there to preserve the color across reboots. As power cycling the whole device any time I wanted to change the color even by one quantum was not practical, I2C interface was clearly not the way to go.
+                </p>
+                <div class="work-page-img" style="width: 800px;">
+                    <img src="sunrise-simulator/trace.png" />
+                    <p><em>Trace of the IR receiver data line when a button on the remote was pressed.</em></p>
+                </div>
+                <p> 
+                    Poking around the 3-pin IR receiver with my scope revealed that the three pins were ground, power, and a data line. I recorded some traces of the data line when pressing buttons on the included remote and discovered that a packet consisted of three parts:
+                </p>
+                <ol>
+                    <li>A data-start signal consisting of a low followed by a high signal.</li>
+                    <li>A timing signal consisting of 8 zeroes followed by 8 ones.</li>
+                    <li>A 16-bit data signal.</li>                     
+                </ol>
+                <p> 
+                    Most interestingly, 1 and 0 were not represented by high and low voltages, as I expected, but by short and long pulses! Some research later revealed that this protocol was standard for 1-wire communication, but in the moment it was an exciting discovery.
+                </p>
+                <p> 
+                    My next task was to find what how color was encoded in the 16-bit transferred data. Looking at the traces for various buttons, though, I discovered that each 16-bit signal consisted of exactly 8 zeroes and 8 ones. Furthermore, the last 8 bits were merely the inverse of the first 8. In essence, there were only 8C4 = 70 possible packets, corresponding to only about 6 bits of data per packet sent: clearly not enough to encode any sort of rich RGB color space. The data transmitted by the packets was not color data but rather information on what button was being pressed.
+                </p>
+                <p> 
+                    Further twiddling with the I2C bus revealed the solution for setting arbitrary colors. This LED strip came with 3 "DIY" colors that could be adjusted with red/green/blue up/down buttons. When one of these was pressed, a corresponding byte in the EEPROM write command shifted values from 0 to 63. These LEDs operated on an 18-bit RGB color space that could be traversed by spoofing these red/green/blue up/down signals.
+                </p>
+                <div class="work-page-img" style="width: 763px;">
+                    <img src="sunrise-simulator/hacked.jpg" />
+                    <p><em>The final hardware modification: adding a pulldown diode for the RPi interface.</em></p>
+                </div>
+                <div class="work-page-img" style="width: 453px;">
+                    <img src="sunrise-simulator/box.jpg" />
+                    <p><em>The box containing the control circuit with a hole added for me to put my wires though.</em></p>
+                </div>
+                <p> 
+                    I added a diode to the IR data line to be able to pull it down artificially with an external signal without compromising its normal remote operation. I wired the diode and a ground reference detachably to my Raspberry Pi server that runs a simple bit-banging program. Now, this project broadcasts sunrise colors to my room at any specified time each morning!
+                </p>
+                <p> 
+                    <em>The server source code can be accessed <a href="sunrise-simulator/dawn.cpp">here</a>.</em>
+                </p>
+            </div>
+        </div>
+        
+        
+        
+        <!-- END BODY -->
+    </body>
+</html>
